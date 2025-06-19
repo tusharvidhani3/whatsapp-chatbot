@@ -18,7 +18,7 @@ public class FirebaseConfig {
     public void init() {
         try {
             InputStream serviceAccount =
-                getClass().getClassLoader().getResourceAsStream("whatsapp-chatbot-2b134-firebase-adminsdk-fbsvc-01773c49a2.json");
+                getClass().getClassLoader().getResourceAsStream("/etc/secrets/whatsapp-chatbot-2b134-firebase-adminsdk-fbsvc-01773c49a2.json");
 
             FirebaseOptions options = FirebaseOptions.builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
