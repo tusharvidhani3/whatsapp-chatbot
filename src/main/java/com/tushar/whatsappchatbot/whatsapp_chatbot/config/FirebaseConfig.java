@@ -1,5 +1,6 @@
 package com.tushar.whatsappchatbot.whatsapp_chatbot.config;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -18,7 +19,7 @@ public class FirebaseConfig {
     public void init() {
         try {
             InputStream serviceAccount =
-                getClass().getClassLoader().getResourceAsStream("/etc/secrets/whatsapp-chatbot-2b134-firebase-adminsdk-fbsvc-01773c49a2.json");
+                new FileInputStream("/etc/secrets/whatsapp-chatbot-2b134-firebase-adminsdk-fbsvc-01773c49a2.json");
 
             FirebaseOptions options = FirebaseOptions.builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
